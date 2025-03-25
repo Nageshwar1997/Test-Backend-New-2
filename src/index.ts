@@ -1,6 +1,5 @@
 import express from "express";
-import helloRouter from "./api/hello";
-import testRouter from "./api/test";
+import testRouter from "./routes/test";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -8,9 +7,7 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 
 // API routes
-app.use("/api/hello", helloRouter);
 app.use("/test", testRouter);
-
 // Root route
 app.get("/", (req, res) => {
   res.send("Express + TypeScript Server is running!");
